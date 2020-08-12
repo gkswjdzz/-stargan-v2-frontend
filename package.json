@@ -1,0 +1,24 @@
+{
+  "name": "stargan-v2-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkswjdzz/stargan-v2-frontend.git"
+  },
+  "author": "gkswjdzz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gkswjdzz/stargan-v2-frontend/issues"
+  },
+  "homepage": "https://github.com/gkswjdzz/stargan-v2-frontend#readme"
+}
