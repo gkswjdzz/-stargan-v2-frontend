@@ -18,8 +18,7 @@ if (fb) {
 if (tw) {
   Array.from(tw).forEach(
     tw => tw.addEventListener("click", () => {
-      window.open("https://twitter.com/intent/tweet"
-        +"&text="+encodeURIComponent('Style Changer, StarGAN-v2')
+      window.open("https://twitter.com/intent/tweet?="
         +"&url="+encodeURIComponent(window.location.href)
       );
     })
