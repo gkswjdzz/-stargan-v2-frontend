@@ -53,21 +53,27 @@
       </div>
       <h1 class="title">Style Changer, StarGAN-v2</h1>
       <p1 class="sub_title">What if your face is translated into a cat by AI?<br>
-        Upload your photo and generate new faces in various styles using StarGAN-v2.</p1>
+        Upload your photo and generate new faces in various styles using<br>
+        StarGAN-v2.</p1>
     </div>
 
     <div id="upload">
       <div class="upload_image">
         <div class="type">
           <p1 class="bold">Choose Face Type</p1>
-          <input type="radio" id="human" name="face" value="Human Face" checked>
-          <label for="human">Human Face</label>
-          <input type="radio" id="animal" name="face" value="Animal Face">
-          <label for="animal">Animal Face</label>
+          <div id="model_box">
+            <input type="radio" id="human" name="face" value="Human Face" checked>
+            <label for="human">Human Face</label>
+            <input type="radio" id="animal" name="face" value="Animal Face">
+            <label for="animal">Animal Face</label>
+          </div>
         </div>
-        <div class="upload_button" onclick="uploadFile()">
-          <p1>Choose Photo</p1>
-          <input type="file" id="source" style="display: none">
+        <div class="upload_wrapper">
+          <div class="upload_button" onclick="uploadFile()">
+            <p1>Choose Photo</p1>
+            <input type="file" id="source" accept="image/jpeg, image/png" style="display: none">
+          </div>
+          <h3 id="filename"></h3>
         </div>
         <p2 class="caution opacity">
           1. Set the name of the image file in English or numbers.<br>
@@ -76,7 +82,7 @@
         </p2>
       </div>
 
-      <div class="btn" id="submit">
+      <div class="btn" id="submit" disabled>
         <p1>Run</p1>
       </div>
     </div>
@@ -106,7 +112,7 @@
     <div id="result">
       <img id="result_image" src="images/sample_result.png" alt="" class="result_image">
     </div>
-    <div class="btn download">
+    <div id="download" class="btn download" disabled>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M19 12V19H5V12H3V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V12H19Z" fill="white"/>
         <path d="M15.59 10.09L13 12.67V3L11 3V12.67L8.41 10.09L7 11.5L12 16.5L17 11.5L15.59 10.09Z" fill="white"/>

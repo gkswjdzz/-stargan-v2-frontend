@@ -1,7 +1,9 @@
 const fb = document.getElementsByClassName('to_facebook');
 const tw = document.getElementsByClassName('to_twitter');
 const cp = document.getElementsByClassName('copy_link');
-const source = document.getElementById('source')
+const source = document.getElementById('source');
+const download = document.getElementById('download');
+const img = document.getElementById('result_image');
 
 if (fb) {
   Array.from(fb).forEach(
@@ -34,10 +36,31 @@ if (source) {
   source.addEventListener('change', changeInputImage)
 }
 
+if (download) {
+  download.addEventListener('click', downloadImage);
+}
+
+if (img) {
+  img.addEventListener('change', function(event) {
+    console.log('here')
+    download.removeAttribute('disabled');
+  })
+}
+function downloadImage() {
+  const a = document.createElement('a');
+  a.style.cssText = "display: none;";
+  a.href = img.src;
+  a.download = 'result.png';
+  document.body.appendChild(a);
+  a.click();
+}
+
 function changeInputImage(event) {
   const file = event.target.files[0];
   const reader = new FileReader();
 
+  document.getElementById('filename').innerText = file.name;
+  document.getElementById('submit').removeAttribute('disabled');
   reader.onload = (progressEvent) => {
     document.getElementById('your_image').src = progressEvent.target.result;
   };
@@ -60,7 +83,7 @@ function uploadFile() {
 }
 
 document.getElementById("submit").onclick = () => {
-  document.getElementById("submit").disabled = true;
+  document.getElementById("submit").setAttribute('disabled', '');
   // document.getElementById("errorbox").innerHTML = "";
   const formData = new FormData();
   try{
@@ -72,7 +95,7 @@ document.getElementById("submit").onclick = () => {
     }
   }catch (e) {
     // document.getElementById("errorbox").innerHTML = e;
-    document.getElementById("submit").disabled = false;
+    document.getElementById("submit").removeAttribute('disabled');
     alert(e);
     return;
   }
@@ -105,12 +128,10 @@ document.getElementById("submit").onclick = () => {
   .then(blob => URL.createObjectURL(blob))
   .then(imageURL => {
     document.getElementById("result_image").src = imageURL;
-    // document.getElementById("errorbox").innerHTML = "";
-    document.getElementById("submit").disabled = false;
+    document.getElementById("download").removeAttribute('disabled');
   })
   .catch(e => {
-    // document.getElementById("errorbox").innerHTML = e;
-    document.getElementById("submit").disabled = false;
+    document.getElementById("download").removeAttribute('disabled');
     alert(e)
   })
 }
