@@ -41,7 +41,6 @@ if (download) {
 
 if (img) {
   img.addEventListener('change', function(event) {
-    console.log('here')
     download.removeAttribute('disabled');
   })
 }
