@@ -79,6 +79,11 @@ p2.opacity {
   opacity: 0.6;
 }
 
+span.br {
+  display: block;
+  margin-bottom: 0em;
+}
+
 except {
   font-size: 12px;
   line-height: 20px;
@@ -236,6 +241,8 @@ except {
 }
 
 .sample_image {
+  margin: 60px 0 0 0;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -279,7 +286,7 @@ except {
   height: 256px;
 }
 #result {
-  padding: 100px 0 0 0;
+  padding: 48px 0 0 0;
 }
 
 #footer {
@@ -381,6 +388,36 @@ svg:hover .tw {
 
   .caution {
     padding: 10px 28px;
+  }
+
+  span.br {
+    margin-bottom: 1em;
+  }
+
+  .sample_image {
+    align-items: normal;
+  }
+  .sample_image .sample {
+    height: 150px;
+    width: 150px;
+  }
+
+  .sample_image .union {
+    margin: 0;
+  }
+
+  .union svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  #your_image {
+    height: 150px;
+    width: 150px;
+  }
+
+  #result {
+    padding: 0;
   }
 
   .type {
