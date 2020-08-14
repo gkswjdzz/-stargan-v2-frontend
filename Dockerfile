@@ -7,3 +7,5 @@ RUN npm install
 COPY . .
 
 ENTRYPOINT ["node","server.js"]
+
+EXPOSE 8008
