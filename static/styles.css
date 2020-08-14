@@ -123,6 +123,7 @@ except {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #title {
@@ -142,6 +143,9 @@ except {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  /*width: 90%;*/
 }
 
 .upload_wrapper {
@@ -158,8 +162,8 @@ except {
   background-color: #1A1B1F;
   background-color: rgba( 0, 0, 0, 0.2 );
 
-  max-width: 840px; /* TODO */
-  width: 95%; /* TODO */
+  width: 80%;
+  max-width: 720px;
 }
 
 .upload_button {
@@ -354,7 +358,37 @@ svg:hover .tw {
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
+  .sample_image .sample {
+    height: 200px;
+    width: 200px;
+  }
+
+  #your_image {
+    height: 200px;
+    width: 200px;
+  }
+
+  #footer {
+    margin-bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #footer .ainize {
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+  }
+
+  #footer .github {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 415px) {
 
   #header {
     margin: 22px 0 22px 0;
@@ -407,8 +441,8 @@ svg:hover .tw {
   }
 
   .union svg {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
   }
 
   #your_image {
@@ -483,23 +517,5 @@ svg:hover .tw {
     right: 24px;
 
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
-  }
-
-  #footer {
-    margin-bottom: 100px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #footer .ainize {
-    display: flex;
-    align-items: center;
-    margin-right: 0px;
-  }
-
-  #footer .github {
-    padding-top: 15px;
-    display: flex;
-    align-items: center;
   }
 }
