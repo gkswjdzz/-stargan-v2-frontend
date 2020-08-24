@@ -105,7 +105,7 @@ document.getElementById("submit").onclick = () => {
   formData.append('check_model', check_model)
 
   fetch(
-    'https://stargan-v2-psi1104.endpoint.ainize.ai//predict',
+    'https://master-stargan-v2-psi1104.endpoint.ainize.ai//predict',
     {
       method: 'POST',
       body: formData,
